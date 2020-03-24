@@ -4,12 +4,6 @@ This style guide is different from others you may see, because the focus is cent
 
 Our overarching goals are __conciseness__, __readability__ and __simplicity__.
 
-You should also check out our other style guides:
-
-* [Swift](https://github.com/raywenderlich/swift-style-guide)
-* [Objective-C](https://github.com/raywenderlich/objective-c-style-guide)
-* [Java](https://github.com/raywenderlich/java-style-guide)
-
 ## Inspiration
 
 This style-guide is somewhat of a mash-up between the existing Kotlin language style guides, and a tutorial-readability focused Swift style-guide. The language guidance is drawn from: 
@@ -45,10 +39,12 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Visibility Modifiers](#visibility-modifiers)
   + [Fields & Variables](#fields--variables)
   + [Classes](#classes)
+  + [Структура класса](#структура-класса)
   + [Data Type Objects](#data-type-objects)
-  + [Enum Classes](#enum-classes)
+- [Enum Classes](#enum-classes)
+  - [Enum с конструктором](#enum-с-конструктором)
+  - [Enum с методами](#enum-с-методами)
 - [Spacing](#spacing)
-  + [Indentation](#indentation)
   + [Line Length](#line-length)
   + [Vertical Spacing](#vertical-spacing)
 - [Semicolons](#semicolons)
@@ -182,6 +178,20 @@ twitterHandle: String
 
 Exactly one class per source file, although inner classes are encouraged where scoping appropriate.
 
+### Структура класса
+
+1) companion object
+2) Поля: `abstract`, `override`, `public`, `internal`, `protected`, `private`
+3) Блок инициализации: `init`, `конструкторы`
+4) Абстрактные методы
+5) Переопределенные методы родительского класса (желательно в том же порядке, в каком они следуют в родительском классе)
+6) Реализации методов интерфейсов (желательно в том же порядке, в каком они следуют в описании класса, соблюдая при этом порядок описания этих методов в самом интерфейсе)
+7) `public` методы
+8) `internal` методы
+9) `protected` методы
+10) `private` методы
+11) `inner` классы
+
 ### Data Type Objects
 
 Prefer data classes for simple data holding objects.
@@ -202,13 +212,63 @@ __GOOD:__
 data class Person(val name: String)
 ```
 
-### Enum Classes
+## Enum Classes
 
-Enum classes without methods may be formatted without line-breaks, as follows:
+Enum classes without methods may be formatted as follows:
 
 ```kotlin
-private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
+private enum CompassDirection { 
+    EAST, NORTH, WEST, SOUTH 
+}
 ```
+
+### Enum с конструктором
+
+Если есть конструктор, то каждый элемент должен занимать иметь свою строку
+
+```kotlin
+private enum Numbers(val num: Int) { 
+    ONE(1), 
+    TWO(2), 
+    THREE(3), 
+    FOUR(4) 
+}
+```
+
+### Enum с методами
+
+#### 	С конструктором
+
+```kotlin
+private enum Numbers(val num: Int) { 
+    ONE(1), 
+    TWO(2), 
+    THREE(3), 
+    FOUR(4);
+    
+    override fun toString(): String {
+        return "${this.name} | ${this.num}"
+    }
+}
+```
+
+#### 	Без конструктора
+
+```kotlin
+private enum Numbers { 
+    ONE, TWO, THREE, FOUR;
+    
+    override fun toString(): String {
+        return this.name
+    }
+}
+```
+
+
+
+## Spacing
+
+Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
 
 ### Line Length
 
@@ -442,8 +502,8 @@ The following copyright statement should be included at the top of every source 
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
- ```
- 
+```
+
 ## Smiley Face
 
 Smiley faces are a very prominent style feature of the raywenderlich.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket ] is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis ) creates a half-hearted smile, and thus is not preferred.
