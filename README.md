@@ -48,7 +48,6 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Data Type Objects](#data-type-objects)
   + [Enum Classes](#enum-classes)
 - [Spacing](#spacing)
-  + [Indentation](#indentation)
   + [Line Length](#line-length)
   + [Vertical Spacing](#vertical-spacing)
 - [Semicolons](#semicolons)
@@ -213,48 +212,6 @@ private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 ## Spacing
 
 Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
-
-### Indentation
-
-Indentation is using spaces - never tabs.
-
-#### Blocks
-
-Indentation for blocks uses 2 spaces (not the default 4):
-
-__BAD:__
-
-```kotlin
-for (i in 0..9) {
-    Log.i(TAG, "index=" + i)
-}
-```
-
-__GOOD:__
-
-```kotlin
-for (i in 0..9) {
-  Log.i(TAG, "index=" + i)
-}
-```
-
-#### Line Wraps
-
-Indentation for line wraps should use 4 spaces (not the default 8):
-
-__BAD:__
-
-```kotlin
-val widget: CoolUiWidget =
-        someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line)
-```
-
-__GOOD:__
-
-```kotlin
-val widget: CoolUiWidget =
-    someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line)
-```
 
 ### Line Length
 
@@ -488,8 +445,8 @@ The following copyright statement should be included at the top of every source 
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
- ```
- 
+```
+
 ## Smiley Face
 
 Smiley faces are a very prominent style feature of the raywenderlich.com site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket ] is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis ) creates a half-hearted smile, and thus is not preferred.
