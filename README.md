@@ -41,7 +41,9 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Classes](#classes)
   + [Структура класса](#структура-класса)
   + [Data Type Objects](#data-type-objects)
-  + [Enum Classes](#enum-classes)
+- [Enum Classes](#enum-classes)
+  - [Enum с конструктором](#enum-с-конструктором)
+  - [Enum с методами](#enum-с-методами)
 - [Spacing](#spacing)
   + [Line Length](#line-length)
   + [Vertical Spacing](#vertical-spacing)
@@ -210,13 +212,59 @@ __GOOD:__
 data class Person(val name: String)
 ```
 
-### Enum Classes
+## Enum Classes
 
-Enum classes without methods may be formatted without line-breaks, as follows:
+Enum classes without methods may be formatted as follows:
 
 ```kotlin
-private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
+private enum CompassDirection { 
+    EAST, NORTH, WEST, SOUTH 
+}
 ```
+
+### Enum с конструктором
+
+Если есть конструктор, то каждый элемент должен занимать иметь свою строку
+
+```kotlin
+private enum Numbers(val num: Int) { 
+    ONE(1), 
+    TWO(2), 
+    THREE(3), 
+    FOUR(4) 
+}
+```
+
+### Enum с методами
+
+#### 	С конструктором
+
+```kotlin
+private enum Numbers(val num: Int) { 
+    ONE(1), 
+    TWO(2), 
+    THREE(3), 
+    FOUR(4);
+    
+    override fun toString(): String {
+        return "${this.name} | ${this.num}"
+    }
+}
+```
+
+#### 	Без конструктора
+
+```kotlin
+private enum Numbers { 
+    ONE, TWO, THREE, FOUR;
+    
+    override fun toString(): String {
+        return this.name
+    }
+}
+```
+
+
 
 ## Spacing
 
