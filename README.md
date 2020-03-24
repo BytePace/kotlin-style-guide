@@ -210,52 +210,6 @@ Enum classes without methods may be formatted without line-breaks, as follows:
 private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 ```
 
-## Spacing
-
-Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
-
-### Indentation
-
-Indentation is using spaces - never tabs.
-
-#### Blocks
-
-Indentation for blocks uses 2 spaces (not the default 4):
-
-__BAD:__
-
-```kotlin
-for (i in 0..9) {
-    Log.i(TAG, "index=" + i)
-}
-```
-
-__GOOD:__
-
-```kotlin
-for (i in 0..9) {
-  Log.i(TAG, "index=" + i)
-}
-```
-
-#### Line Wraps
-
-Indentation for line wraps should use 4 spaces (not the default 8):
-
-__BAD:__
-
-```kotlin
-val widget: CoolUiWidget =
-        someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line)
-```
-
-__GOOD:__
-
-```kotlin
-val widget: CoolUiWidget =
-    someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line)
-```
-
 ### Line Length
 
 Lines should be no longer than 100 characters long.
