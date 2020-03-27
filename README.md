@@ -1,6 +1,4 @@
-# The Official raywenderlich.com Kotlin Style Guide (in progress)
-
-This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our tutorials consistent.
+# Kotlin Style Guide (in progress)
 
 Our overarching goals are __conciseness__, __readability__ and __simplicity__.
 
@@ -12,8 +10,6 @@ This style-guide is somewhat of a mash-up between the existing Kotlin language s
 - The [Kotlin Coding Conventions](https://kotlinlang.org/docs/reference/coding-conventions.html) 
 - The [Android contributors style guide](https://source.android.com/source/code-style.html)
 - The [Google Java Style Guide](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
-
-Alterations to support additional readability in tutorials were inspired by the [raywenderlich.com Swift style guide](https://github.com/raywenderlich/swift-style-guide).
 
 ## Android Studio Coding Style
 
@@ -268,7 +264,7 @@ private enum Numbers {
 
 ## Spacing
 
-Spacing is especially important in raywenderlich.com code, as code needs to be easily readable as part of the tutorial. 
+Spacing is especially important in code, as code needs to be easily readable. 
 
 ### Line Length
 
