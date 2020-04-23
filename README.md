@@ -31,6 +31,8 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [Fields](#fields)
   + [Variables & Parameters](#variables--parameters)
   + [Misc](#misc)
+  + [Id's](#id's)
+  + [Имена стилей](#имена-стилей)
 - [Declarations](#declarations)
   + [Visibility Modifiers](#visibility-modifiers)
   + [Fields & Variables](#fields--variables)
@@ -135,6 +137,46 @@ url: String
 findPostById
 ```
 
+### Id's
+
+Правило Where-What-Description. Например `fragment_authorization_text_view_password_hint`. Удобно для автокомплита
+
+### Имена стилей
+
+Порядок такой:
+
+1. Название View, к которому применяется стиль
+
+2. Место применения (Если стиль будет применяться во всём проекте, то это можно опустить)
+
+3. Описание (Если требуется 2 почти одинаковых стиля, в которых различаются несколько параметров. Например, разный цвет текста или фона)
+
+   ```xml
+       <style name="InputField.Field" parent="android:Widget.EditText">
+           <item name="android:textColor">@color/accent</item>
+           <item name="android:textColorHint">@color/gray_BD</item>
+           <item name="fontFamily">@font/sf_pro_bold</item>
+           <item name="android:textSize">16sp</item>
+           <item name="android:background">@android:color/transparent</item>
+       </style>
+   
+       <style name="InputField.Field.Light" parent="android:Widget.EditText">
+           <item name="android:textColor">@color/accent</item>
+           <item name="android:textColorHint">@color/gray_BD</item>
+           <item name="fontFamily">@font/sf_pro</item>
+           <item name="android:textSize">16sp</item>
+           <item name="android:background">@drawable/d_border</item>
+       </style>
+   ```
+
+   ```xml
+   	<style name="TextView.BottomSheetDialog.Header">
+       	<item name="android:textColor">@android:color/white</item>
+       	<item name="fontFamily">@font/sf_pro_bold</item>
+       	<item name="android:textSize">16sp</item>
+   	</style>
+   ```
+
 ## Declarations
 
 ### Visibility Modifiers
@@ -220,7 +262,7 @@ private enum CompassDirection {
 
 ### Enum с конструктором
 
-Если есть конструктор, то каждый элемент должен занимать иметь свою строку
+Если есть конструктор, то каждый элемент должен занимать свою строку
 
 ```kotlin
 private enum Numbers(val num: Int) { 
